@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { capacityLph, products, sections } from '../data/products'
+import { groupProducts } from '../data/productGroups'
 import ProductCard from './../components/ProductCard'
 import { Pill } from '../components/ui'
 import { ArrowRight, Close, Scale, Sparkle } from '../components/Icons'
@@ -80,6 +81,9 @@ export default function Shop() {
     if (sort === 'cap-desc') sorted.sort((a, b) => capacityLph(b) - capacityLph(a))
     return sorted
   }, [cat, tech, body, maxPrice, sort])
+
+  // One card per physical model; the grades live inside it.
+  const groups = useMemo(() => groupProducts(list), [list])
 
   const activeCount = tech.length + (body ? 1 : 0) + (maxPrice < PRICE_MAX ? 1 : 0)
   const clearAll = () => {
@@ -188,14 +192,16 @@ export default function Shop() {
   return (
     <>
       <section className="shell pt-10 pb-8 md:pt-14">
-        <p className="eyebrow text-muted-2">{section ? section.pages : 'Full range · 30 models'}</p>
+        <p className="eyebrow text-muted-2">
+          {section ? section.pages : `Full range · ${products.length} models`}
+        </p>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <h1 className="display-2">{section ? section.label : 'The complete range'}</h1>
             <p className="lede mt-4">
               {section
                 ? section.blurb
-                : 'Thirty models across three ranges, arranged exactly as they appear in the catalogue — domestic cabinets, commercial systems and industrial plants.'}
+                : `${products.length} models across three ranges, arranged exactly as they appear in the catalogue — domestic cabinets, commercial systems and industrial plants.`}
             </p>
           </div>
           {compare.length > 0 && (
@@ -219,8 +225,11 @@ export default function Shop() {
                   Filters {activeCount > 0 && <span className="text-blue-ink">({activeCount})</span>}
                 </button>
                 <p className="text-[14px] text-muted">
-                  <strong className="font-semibold text-ink">{list.length}</strong>{' '}
-                  {list.length === 1 ? 'model' : 'models'}
+                  <strong className="font-semibold text-ink">{groups.length}</strong>{' '}
+                  {groups.length === 1 ? 'product' : 'products'}
+                  {list.length !== groups.length && (
+                    <span className="text-muted-2"> · {list.length} models</span>
+                  )}
                 </p>
                 {activeCount > 0 && (
                   <button
@@ -282,7 +291,7 @@ export default function Shop() {
               </div>
             )}
 
-            {list.length === 0 ? (
+            {groups.length === 0 ? (
               <div className="mt-16 rounded-4xl border border-dashed border-line py-20 text-center">
                 <p className="font-display text-[22px] font-semibold">Nothing matches that.</p>
                 <p className="mx-auto mt-3 max-w-md text-[14.5px] text-muted">
@@ -294,9 +303,9 @@ export default function Shop() {
               </div>
             ) : (
               <div className="mt-7 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {list.map((p, i) => (
-                  <div key={p.id} className="reveal" style={{ transitionDelay: `${(i % 3) * 60}ms` }}>
-                    <ProductCard p={p} />
+                {groups.map((g, i) => (
+                  <div key={g.id} className="reveal" style={{ transitionDelay: `${(i % 3) * 60}ms` }}>
+                    <ProductCard group={g} />
                   </div>
                 ))}
               </div>
@@ -355,7 +364,7 @@ export default function Shop() {
               Clear
             </button>
             <button onClick={() => setFiltersOpen(false)} className="btn-primary flex-1">
-              Show {list.length}
+              Show {groups.length}
             </button>
           </div>
         </div>

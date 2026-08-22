@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { bySection, capacityLph, company, faqs, getProduct, sections } from '../data/products'
+import { capacityLph, company, faqs, getProduct, sections } from '../data/products'
+import { groupOfProduct, groupsBySection } from '../data/productGroups'
 import ProductImage from '../components/ProductImage'
 import ProductCard from '../components/ProductCard'
 import { Accordion, Pill, SectionHead } from '../components/ui'
@@ -27,10 +28,14 @@ export default function Product() {
   const [qty, setQty] = useState(1)
   const [tab, setTab] = useState('specs')
 
-  const related = useMemo(
-    () => (p ? bySection(p.section).filter((x) => x.id !== p.id).slice(0, 3) : []),
-    [p],
-  )
+  // Other physical models in the range - never another grade of this one.
+  const related = useMemo(() => {
+    if (!p) return []
+    const own = groupOfProduct(p)
+    return groupsBySection(p.section)
+      .filter((g) => g.id !== own?.id)
+      .slice(0, 3)
+  }, [p])
 
   if (!p) return <NotFound />
 
@@ -306,8 +311,8 @@ export default function Product() {
             actionTo={`/shop?c=${p.section}`}
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((r) => (
-              <ProductCard key={r.id} p={r} />
+            {related.map((g) => (
+              <ProductCard key={g.id} group={g} />
             ))}
           </div>
         </section>

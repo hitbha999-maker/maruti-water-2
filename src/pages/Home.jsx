@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { bySection, company, faqs, getProduct, sections } from '../data/products'
+import { groupsBySection } from '../data/productGroups'
 import ProductCard from '../components/ProductCard'
 import ProductImage from '../components/ProductImage'
 import WaterFinder from '../components/WaterFinder'
@@ -191,6 +192,7 @@ function Ranges() {
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
         {sections.map((s, i) => {
           const items = bySection(s.id)
+          const models = groupsBySection(s.id)
           const hero = getProduct(RANGE_ART[s.id][0])
           const priced = items.filter((p) => typeof p.price === 'number')
           const from = priced.length ? Math.min(...priced.map((p) => p.price)) : null
@@ -212,7 +214,7 @@ function Ranges() {
               <div className="flex flex-1 flex-col p-6 md:p-7">
                 <div className="flex items-center gap-2">
                   <span className="chip bg-mist py-1 text-[11.5px] text-muted">
-                    {items.length} models
+                    {models.length} products
                   </span>
                   <span className="chip bg-mist py-1 text-[11.5px] text-muted">{s.pages}</span>
                 </div>
@@ -271,7 +273,7 @@ function Ranges() {
    ========================================================= */
 function Featured() {
   const [tab, setTab] = useState('domestic')
-  const shown = bySection(tab).slice(0, 4)
+  const shown = groupsBySection(tab).slice(0, 4)
 
   return (
     <section className="shell py-14 md:py-20">
@@ -306,8 +308,8 @@ function Featured() {
       </div>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {shown.map((p) => (
-          <ProductCard key={p.id} p={p} />
+        {shown.map((g) => (
+          <ProductCard key={g.id} group={g} />
         ))}
       </div>
     </section>

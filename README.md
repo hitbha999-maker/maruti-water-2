@@ -86,6 +86,55 @@ directly. Adding an object to `products` automatically propagates to the home gr
 mega menu, compare table, footer sitemap and the requirement finder's scoring. Set `image` to a path
 under `public/products/`.
 
+## Product cards: one model, many grades
+
+The catalogue lists each grade as its own model — Zuric Platinum, Zuric Gold and Zuric
+Silver are three entries for one cabinet. Rendering those as three cards repeated the
+same photograph three times, so the grid now shows **one card per physical model** with
+the grades selectable inside it.
+
+`src/data/productGroups.js` does the grouping. The key is the product photograph:
+
+```js
+const key = `${p.section}|${p.image}`
+```
+
+Two entries that ship the same physical unit share an image; anything with its own
+photograph — the open-frame vs cabinet 15 LPH systems, every plant — stays a separate
+card, which is correct. Nothing is duplicated or invented: a group is a view over the
+same product objects, so price, specs, slug and routing are untouched.
+
+| Range | Products | Cards |
+| --- | --- | --- |
+| Domestic | 12 | 5 — Zuric, Nine, Onix, Mars, Jade |
+| Commercial RO Plant | 12 | 11 — the two pressure tanks group |
+| Industrial RO Plant | 6 | 6 |
+| **Total** | **30** | **22** |
+
+The card title and the grade labels are derived, not hand-written: the family's names
+are split on whatever part they share, from whichever end is common.
+
+```
+Zuric Platinum / Zuric Gold / Zuric Silver   ->  "Zuric"            + Platinum / Gold / Silver
+15 L Pressure Tank RO / 25 L Pressure Tank RO ->  "Pressure Tank RO" + 15 L / 25 L
+```
+
+A guard stops a label decaying to a bare number — the pressure tanks share the "L", which
+would otherwise leave the grades as "15" and "25" with the unit stranded in the title.
+
+
+Selecting a grade updates the technology line, filter chips, price, storage and body
+material together, with a 130ms leave and 260ms enter. The selection is held as a
+product id rather than an index, and the segmented control moves the instant you act
+while the content follows — so a filter that removes a grade mid-animation, or a change
+of mind inside the fade, can never land the card on something you did not choose. The panel carries a 106px floor
+so the card never resizes between grades. **Add to enquiry and Compare both record the
+selected grade**, not the family — choosing Gold and adding it stores `zuric-gold`.
+
+Grades are chosen by click, by arrow key (the group is one tab stop with roving
+tabindex), or by swiping the card on mobile. Under `prefers-reduced-motion` the slide
+becomes a plain fade.
+
 ## Homepage hero carousel
 
 The right side of the hero rotates one flagship per product category. Which product

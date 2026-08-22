@@ -574,3 +574,112 @@
     transform: scaleX(1);
   }
 }
+
+/* ============================================================
+   Variant selector
+   One physical model per card; the grade is chosen inside it.
+   ============================================================ */
+
+@keyframes variant-in-next {
+  from {
+    opacity: 0;
+    transform: translate3d(12px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes variant-in-prev {
+  from {
+    opacity: 0;
+    transform: translate3d(-12px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@layer components {
+  .variant-rail {
+    position: relative;
+    display: flex;
+    gap: 0;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--color-mist);
+    border: 1px solid var(--color-line);
+  }
+  /* The sliding pill behind the selected grade. */
+  .variant-thumb {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow:
+      0 1px 2px rgba(11, 11, 12, 0.08),
+      0 6px 14px -8px rgba(11, 11, 12, 0.32);
+    transition:
+      transform 0.42s var(--ease-out-quint),
+      width 0.42s var(--ease-out-quint);
+    pointer-events: none;
+  }
+  .variant-tab {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0%;
+    min-width: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 0.42rem 0.5rem;
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--color-muted);
+    transition: color 0.3s var(--ease-out-quint);
+  }
+  .variant-tab:hover {
+    color: var(--color-ink);
+  }
+  .variant-tab[aria-selected='true'] {
+    color: var(--color-ink);
+  }
+
+  /* Variant-dependent block: fades out to the side, then the new content
+     animates in from the opposite side. The wrapper carries a min-height so
+     a shorter filter list never collapses the card. */
+  .variant-swap {
+    animation: variant-in-next 260ms var(--ease-out-quint) both;
+  }
+  .variant-swap[data-dir='-1'] {
+    animation-name: variant-in-prev;
+  }
+  .variant-out {
+    opacity: 0;
+    transform: translate3d(-8px, 0, 0);
+    transition:
+      opacity 130ms ease,
+      transform 130ms ease;
+  }
+  .variant-out[data-dir='-1'] {
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .variant-swap {
+    animation: none !important;
+    opacity: 1;
+  }
+  .variant-out {
+    transition: opacity 120ms ease !important;
+    transform: none !important;
+  }
+  .variant-thumb {
+    transition: none !important;
+  }
+}
