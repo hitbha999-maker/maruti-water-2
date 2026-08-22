@@ -38,7 +38,7 @@ export default function CartDrawer() {
     >
       <div
         onClick={() => setCartOpen(false)}
-        className={`absolute inset-0 bg-ink/45 backdrop-blur-sm transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${
           cartOpen ? 'opacity-100' : 'opacity-0'
         }`}
       />
@@ -46,7 +46,7 @@ export default function CartDrawer() {
       <aside
         role="dialog"
         aria-label="Enquiry list"
-        className={`absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col bg-white shadow-2xl transition-transform duration-500 ${
+        className={`absolute inset-y-0 right-0 flex w-full max-w-[440px] flex-col border-l border-line bg-graphite shadow-2xl transition-transform duration-500 ${
           cartOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
@@ -207,7 +207,7 @@ export function Toast() {
       }`}
       style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
     >
-      <div className="flex items-center gap-2.5 rounded-full bg-ink px-5 py-3 text-[14px] font-medium text-white shadow-xl">
+      <div className="flex items-center gap-2.5 rounded-full bg-steel px-5 py-3 text-[14px] font-medium text-white shadow-xl">
         <Check size={16} className="text-aqua-2" />
         {toast}
       </div>

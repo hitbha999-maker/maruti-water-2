@@ -95,7 +95,7 @@ export default function VideoModal({ video, onClose }) {
         aria-label="Close video"
         tabIndex={-1}
         onClick={onClose}
-        className="video-scrim absolute inset-0 cursor-default bg-ink/80 backdrop-blur-md"
+        className="video-scrim absolute inset-0 cursor-default bg-black/80 backdrop-blur-md"
       />
 
       <div ref={panelRef} className="video-panel relative z-10 w-full max-w-5xl">
@@ -113,7 +113,7 @@ export default function VideoModal({ video, onClose }) {
           <button
             ref={closeRef}
             onClick={onClose}
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-ink"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-black"
             aria-label="Close video"
           >
             <Close size={20} />

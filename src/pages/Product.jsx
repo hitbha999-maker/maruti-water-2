@@ -74,7 +74,7 @@ export default function Product() {
               sizes="(max-width: 1024px) 92vw, 620px"
               priority
             />
-            <span className="chip absolute top-5 left-5 border-transparent bg-ink text-white">
+            <span className="chip absolute top-5 left-5 border-transparent bg-white text-black">
               {section.label}
             </span>
             <button
@@ -82,7 +82,7 @@ export default function Product() {
               className={`absolute top-5 right-5 grid h-10 w-10 place-items-center rounded-full border transition-colors ${
                 compare.includes(p.id)
                   ? 'border-transparent bg-blue text-white'
-                  : 'border-line bg-white/85 text-muted hover:border-ink hover:text-ink'
+                  : 'border-line bg-white/5 text-muted hover:border-white/40 hover:text-ink'
               }`}
               aria-pressed={compare.includes(p.id)}
               aria-label={`${compare.includes(p.id) ? 'Remove' : 'Add'} ${p.name} ${
@@ -218,8 +218,8 @@ export default function Product() {
                 role="tab"
                 className={`btn btn-sm shrink-0 border ${
                   tab === id
-                    ? 'border-transparent bg-ink text-white'
-                    : 'border-line text-muted hover:border-ink hover:text-ink'
+                    ? 'border-transparent bg-white text-black'
+                    : 'border-line text-muted hover:border-white/40 hover:text-ink'
                 }`}
               >
                 {label}

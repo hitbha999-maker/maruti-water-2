@@ -93,7 +93,7 @@ export default function WaterFinder() {
                         state === 'done'
                           ? 'bg-aqua text-ink'
                           : state === 'now'
-                            ? 'bg-white text-ink'
+                            ? 'bg-white text-black'
                             : 'bg-white/10 text-white/45'
                       }`}
                     >
@@ -139,7 +139,7 @@ export default function WaterFinder() {
                     legend="How many litres a day?"
                     help="Drinking and cooking only — not washing. Pick the closest starting point and adjust."
                   >
-                    <div className="rounded-3xl bg-ink/50 p-5">
+                    <div className="rounded-3xl bg-black/45 p-5">
                       <div className="flex flex-wrap items-end justify-between gap-3">
                         <span className="font-display text-[52px] leading-none font-bold">
                           {litres.toLocaleString('en-IN')}
@@ -171,7 +171,7 @@ export default function WaterFinder() {
                             onClick={() => setLitres(v)}
                             className={`chip transition-colors ${
                               litres === v
-                                ? 'border-transparent bg-white text-ink'
+                                ? 'border-transparent bg-white text-black'
                                 : 'border-white/15 bg-white/5 text-white/70 hover:border-white/50'
                             }`}
                           >
@@ -197,7 +197,7 @@ export default function WaterFinder() {
                           aria-pressed={needs.includes(w.id)}
                           className={`btn btn-sm border ${
                             needs.includes(w.id)
-                              ? 'border-transparent bg-white text-ink'
+                              ? 'border-transparent bg-white text-black'
                               : 'border-white/20 bg-white/5 text-white hover:border-white/60'
                           }`}
                         >
@@ -219,7 +219,7 @@ export default function WaterFinder() {
                   </button>
                   <button
                     onClick={() => (step === 2 ? setDone(true) : setStep((s) => s + 1))}
-                    className="btn bg-white text-ink hover:bg-glow"
+                    className="btn bg-white text-black hover:bg-[#e9e9ee]"
                   >
                     {step === 2 ? 'Show my shortlist' : 'Continue'} <ArrowRight size={17} />
                   </button>
@@ -267,7 +267,7 @@ export default function WaterFinder() {
                         <ProductImage
                           product={p}
                           className="h-24 w-24 shrink-0 rounded-2xl"
-                          plate="bg-white"
+                          plate="bg-graphite"
                           sizes="96px"
                         />
 
@@ -304,7 +304,7 @@ export default function WaterFinder() {
                             </span>
                             <button
                               onClick={() => add(p.id)}
-                              className="btn btn-sm bg-white text-ink hover:bg-glow"
+                              className="btn btn-sm bg-white text-black hover:bg-[#e9e9ee]"
                             >
                               Add to enquiry
                             </button>
@@ -345,7 +345,7 @@ function Choice({ active, onClick, title, hint }) {
       aria-pressed={active}
       className={`rounded-2xl border p-4 text-left transition-all duration-300 ${
         active
-          ? 'border-white bg-white text-ink'
+          ? 'border-white bg-white text-black'
           : 'border-white/15 bg-white/[0.03] text-white hover:border-white/45'
       }`}
       style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}

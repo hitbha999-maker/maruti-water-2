@@ -104,7 +104,7 @@ export default function ProductCard({ group }) {
           imgClassName="transition-transform duration-700 group-hover:scale-[1.05]"
         />
         <div className="absolute top-4 left-4 flex flex-col items-start gap-2">
-          <span className="chip border-transparent bg-ink text-white">{group.sectionLabel}</span>
+          <span className="chip border-transparent bg-white/10 text-white">{group.sectionLabel}</span>
           {!group.isFamily && p.variant && <span className="chip text-blue-ink">{p.variant}</span>}
         </div>
       </Link>
@@ -116,7 +116,7 @@ export default function ProductCard({ group }) {
         className={`absolute top-4 right-4 grid h-9 w-9 place-items-center rounded-full border backdrop-blur-sm transition-all duration-300 ${
           inCompare
             ? 'border-transparent bg-blue text-white'
-            : 'border-line bg-white/85 text-muted hover:border-ink hover:text-ink'
+            : 'border-line bg-white/5 text-muted hover:border-white/40 hover:text-ink'
         }`}
         title={inCompare ? 'Remove from compare' : 'Add to compare'}
       >

@@ -18,7 +18,7 @@ export default function Footer() {
   const { address } = company
 
   return (
-    <footer className="border-t border-line bg-white">
+    <footer className="border-t border-line bg-abyss">
       {/* talk-to-us band */}
       <div className="shell py-14 md:py-20">
         <div className="canvas ink-field px-6 py-12 text-white md:px-14 md:py-16">
@@ -32,7 +32,7 @@ export default function Footer() {
                 Domestic cabinet or a 3000 LPH plant — the conversation starts the same way, with
                 your feed water and how many litres a day you need.
               </p>
-              <Link to="/quote" className="btn mt-7 bg-white text-ink hover:bg-glow">
+              <Link to="/quote" className="btn mt-7 bg-white text-black hover:bg-[#e9e9ee]">
                 Request a quotation <ArrowRight size={17} />
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function Footer() {
       {/* link columns */}
       <div className="shell grid gap-10 border-t border-line py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
         <div className="lg:pr-8">
-          <LogoLockup className="h-14" alt="Maruti Water Solution" />
+          <LogoLockup className="h-14" invert alt="Maruti Water Solution" />
           <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-muted">
             Clean water for homes, shops and plants. The V-Tech Aqua range of RO systems, from
             12-litre domestic cabinets to 3000 LPH plants.

@@ -77,8 +77,8 @@ function FilterChip({ active, onClick, children }) {
       aria-pressed={active}
       className={`chip shrink-0 whitespace-nowrap transition-colors ${
         active
-          ? 'border-transparent bg-ink text-white'
-          : 'border-line bg-white text-muted hover:text-ink'
+          ? 'border-transparent bg-white text-black'
+          : 'border-line bg-white/5 text-muted hover:text-ink'
       }`}
     >
       {children}
@@ -113,14 +113,14 @@ function VideoCard({ video, onPlay }) {
           </div>
         )}
 
-        <span className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
+        <span className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-black/30" />
 
-        <span className="video-play absolute top-1/2 left-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/95 text-ink shadow-xl">
+        <span className="video-play absolute top-1/2 left-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/95 text-black shadow-xl">
           <Play size={22} className="ml-0.5" />
         </span>
 
         {video.duration && (
-          <span className="absolute right-3 bottom-3 rounded-full bg-ink/80 px-2.5 py-1 font-display text-[12px] font-semibold text-white tabular-nums">
+          <span className="absolute right-3 bottom-3 rounded-full bg-black/80 px-2.5 py-1 font-display text-[12px] font-semibold text-white tabular-nums">
             {video.duration}
           </span>
         )}

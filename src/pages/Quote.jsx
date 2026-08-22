@@ -43,7 +43,7 @@ export default function Quote() {
   if (sent) {
     return (
       <section className="shell py-16 md:py-24">
-        <div className="canvas water-field mx-auto max-w-3xl px-6 py-16 text-center md:px-14">
+        <div className="canvas ink-field mx-auto max-w-3xl px-6 py-16 text-center md:px-14">
           <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-blue text-white">
             <Check size={30} />
           </span>
@@ -54,7 +54,7 @@ export default function Quote() {
             directly.
           </p>
 
-          <pre className="mx-auto mt-8 max-w-lg overflow-x-auto rounded-2xl border border-line bg-white p-5 text-left font-sans text-[13.5px] leading-relaxed whitespace-pre-wrap text-muted">
+          <pre className="mx-auto mt-8 max-w-lg overflow-x-auto rounded-2xl border border-line bg-graphite p-5 text-left font-sans text-[13.5px] leading-relaxed whitespace-pre-wrap text-muted">
             {summary}
           </pre>
 
