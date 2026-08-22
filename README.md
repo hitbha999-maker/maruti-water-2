@@ -19,8 +19,8 @@ Then open <http://localhost:5180>.
 npm run build
 ```
 
-Output lands in `dist/` (~109 kB JS gzipped, ~9.5 kB CSS gzipped, plus 22 product images at
-~846 kB total). Any static host will serve it — configure a SPA rewrite (`/* → /index.html`) so
+Output lands in `dist/` as a single JS chunk, a single CSS chunk and the 22 product
+images (~846 kB). Any static host will serve it — configure a SPA rewrite (`/* → /index.html`) so
 deep links like `/p/plant-1000-auto` resolve.
 
 ## Stack
@@ -46,6 +46,12 @@ carry `price: null` and render as "Price on request" — never substitute a gues
 Each product also records `sourcePage`, so any figure on the site can be traced back to the page it
 came from. The product detail page shows that reference to the customer.
 
+The fuller transcription and QA notes — where the printed page is ambiguous, contradictory or
+garbled — live in `notes/catalogue-provenance.md`, which is **gitignored and never imported**, so
+they stay out of both this repo and the JavaScript bundle every visitor downloads. They are
+internal working notes; anything in them that needs a decision is summarised under "Things to
+confirm before going live" below.
+
 ## Pages
 
 | Route | Contents |
@@ -54,6 +60,8 @@ came from. The product detail page shows that reference to the customer.
 | `/shop` | All 30 models with range / purification / body-material / budget filters |
 | `/p/:slug` | Photo, price, specs, filter stack or bill of materials, enquiry and WhatsApp CTAs |
 | `/compare` | Up to three models side by side across 13 catalogue measures |
+| `/accessories` | The 38 parts the catalogue names, by category, range and fitted model |
+| `/videos` | Video gallery with a lightbox player — **currently empty, see below** |
 | `/technology` | The eight-stage sequence, how hardware scales with capacity, service intervals |
 | `/support` | Service request, cartridge-schedule calculator, WhatsApp contacts |
 | `/about` | What the business does, how it works, where to find it |
@@ -162,6 +170,76 @@ in time with the rotation. Under `prefers-reduced-motion` it falls back to plain
 cross-fades with the float and glow switched off. No animation library — plain CSS
 keyframes and React state.
 
+## Accessories
+
+`/accessories` lists **38 spare parts**. None of them is invented: every entry is a
+component the catalogue itself names in the cartridge line or bill of materials of a
+system already on the site, extracted straight out of `products.js`.
+
+`src/data/accessories.js` is generated. Three fields are derived rather than written:
+
+| Field | Where it comes from |
+| --- | --- |
+| `fits` | the product **ids** whose `cartridges`/`components` name this part |
+| `sections` | the ranges those products belong to — the Domestic/Commercial/Industrial badge |
+| `configuration` | the category label, so the enquiry drawer has a subtitle to show |
+
+The index is keyed on product id, not product name, because four models share a name
+with a sibling build — 15/25 LPH frame vs cabinet, 50 LPH MSPC vs stainless, and the
+1000 LPH plant in auto vs manual. The AUTO and MANUAL multiport valves belong to
+*different* 1000 LPH plants, and a name-keyed index silently merges them.
+
+Two things are deliberately absent:
+
+- **No prices.** The catalogue prices complete systems and never prices a part on its
+  own, so every accessory carries `price: null` and renders "Price on request" through
+  the same formatter the unpriced catalogue models already use.
+- **No photographs.** The catalogue does not picture its parts. Rather than dress the
+  grid in stock imagery that is not the part being sold, each card draws its category
+  glyph. Nine hand-drawn glyphs cover the nine categories.
+
+Accessories go into the **same enquiry list as the systems** — same `mws.enquiry.v1`
+key, same drawer, same WhatsApp handover. They carry `kind: 'accessory'` so the drawer
+knows to draw a glyph and link back to `/accessories#<id>` instead of reaching for a
+photograph and a product page that do not exist.
+
+The pipeline is committed under `tools/`. After editing the catalogue, re-run it:
+
+```bash
+python tools/parts.py && python tools/gen_accessories.py
+```
+
+`parts.py` re-indexes which products name each part; `gen_accessories.py` rewrites
+`src/data/accessories.js` from that index plus `tools/accessory-catalogue.json`, which
+holds the category scheme and the descriptions. Both assert rather than guess — an
+accessory pointing at a product id that no longer exists, a part that lost its
+description, a duplicate id or an empty category all stop the run instead of shipping
+a dead link to the site.
+
+## Videos
+
+`/videos` is **built and empty**. The project contained no video files and no video
+links — not in the catalogue, not in the assets, not in the source — so there was
+nothing real to show, and a demo reel of invented YouTube ids would put dead links on a
+working dealer's website. The page ships the gallery, the category filters, the lazy
+thumbnails and the lightbox player, with an empty state until real videos arrive.
+
+Adding one is a single object in `src/data/videos.js`; the file documents the shape at
+the top. Both sources work:
+
+- `source: 'youtube'` with a `youtubeId` — the still comes from YouTube's image CDN, so
+  no API key and no player script is needed to draw the grid.
+- `source: 'file'` with `src` (and optionally `poster`) for a clip in `public/videos/`.
+
+Categories with no video are never rendered, so the filter row appears only once there
+is something to filter.
+
+The player is mounted only while a video is open and unmounted on close — that is what
+stops playback, and it is why **nothing is fetched from YouTube until someone presses
+play**. Closing works on Escape, on a click outside, and on the close button; none of
+them reloads the page. Focus moves into the dialog on open and returns to the card that
+opened it, Tab is kept inside the dialog, and the page behind is scroll-locked.
+
 ## What the site deliberately does not claim
 
 This is a real trading business, so the copy only states things that can be
@@ -192,6 +270,12 @@ verifiable, not because it is untrue.
 - **Catalogue pages 7 and 8** describe near-identical 15 L and 25 L online systems at different
   prices. The photographs differ (open stainless frame on page 7, enclosed cabinet on page 8), so
   both are listed and labelled by build. Confirm that is correct.
+- **Videos.** There are none yet. Send video links or files and they drop straight into
+  `src/data/videos.js` — the gallery and player are already built and tested. Until then
+  the Videos tab leads to an empty state; say the word if you would rather it stayed
+  hidden until there is something to show.
+- **Accessory pricing.** Every part shows "Price on request" because the catalogue prices
+  systems only. If you have a parts rate card, send it and the figures go in.
 - **Product photography rights.** The images come from the supplied V-Tech Aqua catalogue. Confirm
   you are licensed to publish them, or replace them with your own shots.
 - **Gold-grade filter list.** The catalogue titles the Gold models "RO + UF + TDS + ALKALINE" but

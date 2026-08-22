@@ -1,7 +1,18 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { products } from '../data/products'
+import { accessories } from '../data/accessories'
 
 const StoreCtx = createContext(null)
+
+/**
+ * Systems and spare parts share one enquiry list — someone ordering a plant and
+ * a set of cartridges should send one message, not two. Accessories carry
+ * `kind: 'accessory'` so the drawer can render them without a photograph or a
+ * product page, but everything else — quantities, totals, persistence, the
+ * WhatsApp handover — is the same code path.
+ */
+const findItem = (id) =>
+  products.find((p) => p.id === id) || accessories.find((a) => a.id === id) || null
 
 const KEY_CART = 'mws.enquiry.v1'
 const KEY_COMPARE = 'mws.compare.v1'
@@ -42,7 +53,7 @@ export function StoreProvider({ children }) {
       return [...prev, { id, qty }]
     })
     if (!opts.silent) setCartOpen(true)
-    const item = products.find((p) => p.id === id)
+    const item = findItem(id)
     setToast(item ? `${item.name} added to your enquiry` : 'Added to your enquiry')
   }, [])
 
@@ -71,7 +82,7 @@ export function StoreProvider({ children }) {
     () =>
       lines
         .map((l) => {
-          const item = products.find((p) => p.id === l.id)
+          const item = findItem(l.id)
           return item ? { ...l, item } : null
         })
         .filter(Boolean),

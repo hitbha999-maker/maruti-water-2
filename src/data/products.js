@@ -95,7 +95,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Price printed verbatim as \'M.R.P. Rs. 20.999/- (Incl. of Taxes)\' — period used as thousands separator, normalised to 20999. Features heading printed verbatim as \'Futures :\' (= Features). Page header text layer is garbled/interleaved as \'ZM UO RD IECL\' (= \'ZURIC\' interleaved with \'MODEL\'); the MODEL family header is therefore inferred as ZURIC. Spec table is printed once on the page and is shared a',
   },
   {
     id: 'zuric-gold',
@@ -132,7 +131,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'CONTRADICTION IN SOURCE: model is titled \'RO + UF + TDS + ALKALINE\' but the printed Filter Cartridge list names a UV Filter, not a UF Filter (\'Sediment Carbon Filter, Alkaline Filter, UV Filter, TDS Controller\'). Both recorded verbatim as printed; not reconciled. Price printed as \'M.R.P. Rs. 18.999/- (Incl. of Taxes)\' — period thousands separator, normalised to 18999. Features heading printed verb',
   },
   {
     id: 'zuric-silver',
@@ -167,7 +165,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Filter Cartridge line is printed verbatim as \'Sediment Carbon Filter, Alkaline Filter,\' — it ends with a trailing comma and no further item, so the list may be truncated in the source. Only the two named cartridges are recorded; nothing invented. Price printed as \'M.R.P. Rs. 15.999/- (Incl. of Taxes)\' — period thousands separator, normalised to 15999. Features heading printed verbatim as \'Futures ',
   },
   {
     id: 'nine-platinum',
@@ -205,7 +202,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Page header reads \'NINE\' / \'MODEL\'. Price printed verbatim as \'M.R.P. Rs. 20.999/- (Incl. of Taxes)\' — period thousands separator, normalised to 20999. Features heading printed verbatim as \'Futures :\' (= Features). Spec table printed once on the page and shared across all three NINE variants. Label/value columns interleaved in the text layer (8 labels / 8 values, counts verified) and de-interleave',
   },
   {
     id: 'nine-gold',
@@ -242,7 +238,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'CONTRADICTION IN SOURCE: titled \'RO + UF + TDS + ALKALINE\' but the Filter Cartridge list names a UV Filter rather than a UF Filter (\'Sediment Carbon Filter, Alkaline Filter, UV Filter, TDS Controller\'). Recorded as printed. Price \'M.R.P. Rs. 18.999/-\' normalised to 18999. Features heading printed verbatim as \'Futures :\'. Specs from the shared NINE spec table, de-interleaved by 1:1 zip.',
   },
   {
     id: 'nine-silver',
@@ -277,7 +272,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Filter Cartridge line printed verbatim as \'Sediment Carbon Filter, Alkaline Filter,\' with a trailing comma and no further item — list may be truncated in the source. Price \'M.R.P. Rs. 15.999/-\' normalised to 15999. Features heading printed verbatim as \'Futures :\'. Specs from the shared NINE spec table, de-interleaved by 1:1 zip.',
   },
   {
     id: 'onix-platinum',
@@ -315,7 +309,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Page header reads \'ONIX\' / \'MODEL\'. Price printed verbatim as \'M.R.P. Rs. 20.999/- (Incl. of Taxes)\' — period thousands separator, normalised to 20999. Features heading printed verbatim as \'Futures :\' (= Features). Spec table printed once and shared across all three ONIX variants; label/value columns interleaved (8 labels / 8 values, counts verified) and de-interleaved by 1:1 zip. \'V-Tech Aqua\' br',
   },
   {
     id: 'onix-gold',
@@ -352,7 +345,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'CONTRADICTION IN SOURCE: titled \'RO + UF + TDS + ALKALINE\' but the Filter Cartridge list names a UV Filter rather than a UF Filter (\'Sediment Carbon Filter, Alkaline Filter, UV Filter, TDS Controller\'). Recorded as printed. Price \'M.R.P. Rs. 18.999/-\' normalised to 18999. Features heading printed verbatim as \'Futures :\'. Specs from the shared ONIX spec table, de-interleaved by 1:1 zip.',
   },
   {
     id: 'onix-silver',
@@ -387,7 +379,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Filter Cartridge line printed verbatim as \'Sediment Carbon Filter, Alkaline Filter,\' with a trailing comma and no further item — list may be truncated in the source. Price \'M.R.P. Rs. 15.999/-\' normalised to 15999. Features heading printed verbatim as \'Futures :\'. Specs from the shared ONIX spec table, de-interleaved by 1:1 zip.',
   },
   {
     id: 'mars-gold',
@@ -423,7 +414,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'NO PRICE IN SOURCE: the catalogue prints \'M.R.P. Rs.\' followed by \'(Incl. of Taxes)\' with no figure at all. priceInr recorded as null — no price inferred from sibling models. Configuration printed verbatim as \'RO + UF + TDS +ALKALINE\' (missing space before ALKALINE). Features line printed verbatim as \'Fully Automatic Low Pressure Cut-Off, Leakage Proof Fittings\' — no comma after \'Fully Automatic\',',
   },
   {
     id: 'mars-silver',
@@ -459,7 +449,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'NO PRICE IN SOURCE: catalogue prints \'M.R.P. Rs.\' then \'(Incl. of Taxes)\' with no figure. priceInr null. TWO CONTRADICTIONS IN SOURCE: (1) titled \'RO + UF + TDS +ALKALINE\' but the Filter Cartridge list names a UV Filter, not a UF Filter; (2) the title claims TDS but no TDS Controller appears in the cartridge list (\'Sediment Carbon Filter, Alkaline Filter, UV Filter\'). (3) MARS SILVER carries exact',
   },
   {
     id: 'jade',
@@ -493,7 +482,6 @@ export const products = [
       Weight: '10 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'SERIES ATTRIBUTION CAVEAT: JADE is printed on page 5 whose only MODEL family header is \'MARS\' / \'MODEL\', but JADE is a standalone model with its own heading, its own configuration line and its own separate spec table — it is NOT a MARS variant (there is no \'MARS JADE\' or Gold/Silver grading). series recorded as MARS only because that is the page\'s printed family header. NO PRICE IN SOURCE: \'M.R.P.',
   },
   {
     id: 'pressure-tank-15',
@@ -529,7 +517,6 @@ export const products = [
       Weight: '8.5 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Price printed verbatim as \'M.R.P. Rs. 15,000 /- (Incl. of Taxes)\' (note the space before /-). Source typos: heading \'Futures :\' = Features; spec label printed \'Purfication\' = Purification (this page only; pages 7-8 spell it \'Purification\'). Spec block was column-interleaved in the PDF text layer; 9 labels (Body Materials, Purification Capacity, Storage Capacity, Pressure Tank, Purfication, Install',
   },
   {
     id: 'pressure-tank-25',
@@ -565,7 +552,6 @@ export const products = [
       Weight: '8.5 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Price verbatim \'M.R.P. Rs. 25,000/- (Incl. of Taxes)\'. Source typos: \'Futures :\' = Features; \'Purfication\' = Purification. De-interleaved 9 labels against 9 values (MSPC, 25 Ltr., 21 Ltr., Include, Multi Stage, Under Sink / Wall Mounting, 45 W (in use), 8.5 KG Approx, 230 V / 24 V) — counts verified equal. Contradiction: Storage Capacity 21 Ltr. is LESS than the 25 Ltr. Purification Capacity, and ',
   },
   {
     id: 'online-15-frame',
@@ -601,7 +587,6 @@ export const products = [
       Weight: '12 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'DUPLICATE-PAGE HAZARD: page 8 reprints this exact model name, feature list, cartridge list and full spec block, but at M.R.P. Rs. 11,999/- instead of Rs. 12,499/-. The two pages differ ONLY in price. Do not merge; treat as two catalogue entries with conflicting prices (see the page-8 record). Price verbatim \'M.R.P. Rs. 12,499/- (Incl. of Taxes)\'. Source typos: \'Futures :\' = Features; Body Material',
   },
   {
     id: 'online-25-frame',
@@ -637,7 +622,6 @@ export const products = [
       Weight: '13 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'DUPLICATE-PAGE HAZARD: page 8 reprints this exact model name and spec block at M.R.P. Rs. 18,999/- instead of Rs. 19,999/-. Price is the only difference between the two pages. Price verbatim \'M.R.P. Rs. 19,999/- (Incl. of Taxes)\'. Source typos: \'Futures :\' = Features; \'STANDLESS STELL\' = Stainless Steel. De-interleaved 9 labels vs 9 values (STANDLESS STELL, 23 to 25 Ltr., 21 Ltr., Optional, Multi ',
   },
   {
     id: 'online-15-cabinet',
@@ -673,7 +657,6 @@ export const products = [
       Weight: '12 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'NEAR-DUPLICATE OF PAGE 7: page 8 is a byte-for-byte repeat of the page-7 ONLINE spread (same \'ONLINE / MODEL\' header, same model name, same Futures, same Filter Cartridge line, same interleaved spec block) EXCEPT the price: Rs. 11,999/- here vs Rs. 12,499/- on page 7 — a Rs. 500 discrepancy for what is printed as the same model. PRICE CONFLICT UNRESOLVED IN SOURCE; both figures are recorded verbat',
   },
   {
     id: 'online-25-cabinet',
@@ -709,7 +692,6 @@ export const products = [
       Weight: '13 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'NEAR-DUPLICATE OF PAGE 7: identical model name and identical spec block to the page-7 25 LTR ONLINE entry; price differs — Rs. 18,999/- here vs Rs. 19,999/- on page 7 (Rs. 1,000 discrepancy). PRICE CONFLICT UNRESOLVED IN SOURCE. Source typos: \'Futures :\' = Features; \'STANDLESS STELL\' = Stainless Steel. De-interleaved 9 labels vs 9 values (STANDLESS STELL, 23 to 25 Ltr., 21 Ltr., Optional, Multi St',
   },
   {
     id: 'online-50-mspc',
@@ -743,7 +725,6 @@ export const products = [
       Weight: '30 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'MSPC-body variant. Page 9 prints TWO models with the IDENTICAL name \'50 LTR. ONLINE RO + ALKALINE\'; they are distinguishable only by Body Materials (MSPC here, \'STANDLESS STELL\' on the second) and price (Rs. 28,999/- vs Rs. 30,999/-). All other specs are identical between the two. CONTRADICTION: the model name says \'+ ALKALINE\' but the Filter Cartridge list names \'Tast Filter\' (= Taste Filter) and',
   },
   {
     id: 'online-50-ss',
@@ -777,7 +758,6 @@ export const products = [
       Weight: '30 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Stainless-body variant, printed under the SAME model name as the MSPC unit above it on page 9; the only printed differences are Body Materials (\'STANDLESS STELL\' = Stainless Steel) and price (Rs. 30,999/- vs Rs. 28,999/-). Weight is printed as 30 KG for both bodies. CONTRADICTION: name says \'+ ALKALINE\' but the cartridge list names \'Tast Filter\' (= Taste Filter) with no alkaline filter. Source typ',
   },
   {
     id: 'online-70',
@@ -811,7 +791,6 @@ export const products = [
       Weight: '45 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Price verbatim \'M.R.P. Rs. 35,999/- (Incl. of Taxes)\'. CONTRADICTION: titled \'+ ALKALINE\' but the Filter Cartridge list names \'Tast Filter\' (= Taste Filter), not an alkaline filter. Also note the model is called 70 LTR while Purification Capacity is printed as \'70 to 80 Ltr.\' (range starts at, not centred on, the model size). Source typos: \'Futures :\' = Features; \'Tast Filter\' = Taste Filter. De-i',
   },
   {
     id: 'online-100',
@@ -845,7 +824,6 @@ export const products = [
       Weight: '50 KG Approx',
       'Operating Voltage': '230 V / 24 V',
     },
-    sourceNote: 'Price verbatim \'M.R.P. Rs. 44,999/- (Incl. of Taxes)\'. IMPORTANT: do not confuse with the page-11 \'100 LTR ONLINE RO\' plant at Rs. 69,999/- — same nominal 100 LTR capacity but a different product (page 11 lists a full component bill-of-materials, drops the \'+ ALKALINE\' from the name, and costs Rs. 25,000 more). CONTRADICTION: name says \'+ ALKALINE\' but cartridge list names \'Tast Filter\' (= Taste F',
   },
   {
     id: 'plant-100',
@@ -883,7 +861,6 @@ export const products = [
       Installation: 'Counter Top / Wall Mounting',
       'Operating Voltage': '230 V',
     },
-    sourceNote: 'PRICE ATTRIBUTION (verify against the printed page if possible): page 11 is a two-column spread and each price box is set on the OPPOSITE side of its own product block. \'M.R.P. Rs. 69,999/- (Incl. of Taxes)\' sits in the right-hand column on the same physical lines as this (left-hand) product\'s spec block and ABOVE the \'150 LTR ONLINE RO\' heading, so it is attributed to this 100 LTR unit; mirrored,',
   },
   {
     id: 'plant-150',
@@ -921,7 +898,6 @@ export const products = [
       Installation: 'Counter Top / Wall Mounting',
       'Operating Voltage': '230 V',
     },
-    sourceNote: 'MAJOR CONTRADICTION IN SOURCE: this 150 LTR unit\'s spec block is printed IDENTICALLY to the 100 LTR unit above it, including \'Purification Capacity : 100 to 110 Ltr.\' — which cannot be right for a 150 LTR model. The figure is transcribed as printed; it is almost certainly a catalogue copy-paste error, but no corrected value is invented. The component list also differs from the 100 LTR unit in exac',
   },
   {
     id: 'plant-250',
@@ -960,7 +936,6 @@ export const products = [
       'Purification Capacity': '250 LTR',
       'Operating Voltage': '230 V',
     },
-    sourceNote: 'Verbatim body material string is "STANDLESS STELL S.S" (typo for Stainless Steel). Price printed as "M.R.P. Rs. 1,29,999/- (Incl. of Taxes)"; in the raw text layer it appears on the same physical lines as this product\'s spec block, offset into the right-hand column - same geometry as the top-of-page product on pages 13 and 14, so it is attributed here. Spec block was interleaved (3 labels / 3 valu',
   },
   {
     id: 'plant-500',
@@ -999,7 +974,6 @@ export const products = [
       'Purification Capacity': '500 LTR',
       'Operating Voltage': '230 V',
     },
-    sourceNote: 'Verbatim body material string is "STANDLESS STELL S.S" (typo for Stainless Steel). Price printed as "M.R.P. Rs. 2,11,999/- (Incl. of Taxes)" at the left page margin, opposite this product\'s spec block in the right-hand column - the same left-margin geometry used for the bottom-of-page product on pages 13 and 14, so it is attributed here. Spec block interleaved (3 labels / 3 values): the values col',
   },
   {
     id: 'plant-1000-auto',
@@ -1039,7 +1013,6 @@ export const products = [
       'Purification Capacity': '1000 LTR',
       'Operating Voltage': '230 V (SINGLE PHASE) / 430 V (THREE PHASE)',
     },
-    sourceNote: 'DISAMBIGUATION: page 13 carries TWO models both printed with the identical name "1000 LTR ONLINE RO". This is the AUTOMATIC variant - its BOM lists "25 NB AUTO MPV" (automatic multiport valve). The other (manual, "25 NB MPV (MENUAL)") is the separate entry below at Rs. 2,39,999. Price here printed as "M.R.P. Rs. 2,59,999/- (Incl. of Taxes)", sitting on the same physical lines as this product\'s spe',
   },
   {
     id: 'plant-1000-manual',
@@ -1079,7 +1052,6 @@ export const products = [
       'Purification Capacity': '1000 LTR',
       'Operating Voltage': '230 V (SINGLE PHASE) / 430 V (THREE PHASE)',
     },
-    sourceNote: 'DISAMBIGUATION: page 13 carries TWO models both printed with the identical name "1000 LTR ONLINE RO". This is the MANUAL variant - its BOM lists "25 NB MPV (MENUAL)", verbatim; "MENUAL" is a typo for MANUAL. The other (automatic, "25 NB AUTO MPV") is the separate entry above at Rs. 2,59,999. The multiport valve is the ONLY difference between the two bills of materials; every other line item is ide',
   },
   {
     id: 'plant-2000',
@@ -1119,7 +1091,6 @@ export const products = [
       'Purification Capacity': '2000 LTR',
       'Operating Voltage': '230 V (SINGLE PHASE) / 430 V (THREE PHASE)',
     },
-    sourceNote: 'Price printed as "M.R.P. Rs. 3,99,999/- (Incl. of Taxes)", on the same physical lines as this product\'s spec block (top-of-page geometry). Verbatim body material "STANDLESS STELL S.S" (typo for Stainless Steel). "40 NB MPV (MENUAL)" recorded verbatim; MENUAL is a typo for MANUAL. Operating Voltage is one two-line value (230 V single phase / 430 V three phase); 3 labels vs 3 values. Pressure tube i',
   },
   {
     id: 'plant-3000',
@@ -1159,7 +1130,6 @@ export const products = [
       'Purification Capacity': '3000 LTR',
       'Operating Voltage': '230 V (SINGLE PHASE) / 430 V (THREE PHASE)',
     },
-    sourceNote: 'Price printed as "M.R.P. Rs. 4,99,999/- (Incl. of Taxes)" at the left page margin, opposite this product\'s spec block in the right-hand column (bottom-of-page geometry). Verbatim body material "STANDLESS STELL S.S" (typo for Stainless Steel). "50 NB MPV (MENUAL)" recorded verbatim; MENUAL is a typo for MANUAL. Operating Voltage is one two-line value (230 V single phase / 430 V three phase); 3 labe',
   },
 ]
 

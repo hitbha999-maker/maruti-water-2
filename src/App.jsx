@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import Shop from './pages/Shop'
 import Product from './pages/Product'
 import Compare from './pages/Compare'
+import Accessories from './pages/Accessories'
+import Videos from './pages/Videos'
 import Technology from './pages/Technology'
 import Support from './pages/Support'
 import About from './pages/About'
@@ -35,6 +37,8 @@ export default function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/p/:slug" element={<Product />} />
           <Route path="/compare" element={<Compare />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/support" element={<Support />} />
           <Route path="/about" element={<About />} />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useStore } from '../lib/store'
 import { inr, priceLabel, whatsappLink } from '../lib/format'
 import { company } from '../data/products'
-import ProductImage from './ProductImage'
+import EnquiryThumb from './EnquiryThumb'
 import { LogoMark } from './Logo'
 import { ArrowRight, Check, Close, Minus, Phone, Plus } from './Icons'
 
@@ -92,12 +92,23 @@ export default function CartDrawer() {
               <ul className="space-y-4">
                 {lines.map((l) => (
                   <li key={l.id} className="flex gap-4">
+                    {/* Spare parts have no catalogue photograph and no product
+                        page of their own, so the thumbnail becomes the category
+                        glyph and the link points back at the accessories grid. */}
                     <Link
-                      to={`/p/${l.item.slug}`}
+                      to={
+                        l.item.kind === 'accessory'
+                          ? `/accessories#${l.item.id}`
+                          : `/p/${l.item.slug}`
+                      }
                       onClick={() => setCartOpen(false)}
                       className="shrink-0"
                     >
-                      <ProductImage product={l.item} className="h-24 w-24 rounded-2xl" sizes="96px" />
+                      <EnquiryThumb
+                        item={l.item}
+                        className="h-24 w-24 rounded-2xl"
+                        sizes="96px"
+                      />
                     </Link>
 
                     <div className="min-w-0 flex-1">

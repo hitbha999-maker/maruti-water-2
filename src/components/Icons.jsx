@@ -137,3 +137,40 @@ export const Play = (p) => (
     <path d="M8 5.5v13l11-6.5-11-6.5Z" />
   </Svg>
 )
+
+/* Accessory category glyphs — the catalogue never photographs its parts, so a
+   card is drawn rather than illustrated. */
+export const Cartridge = (p) => (
+  <Svg {...p}>
+    <rect x="8" y="3" width="8" height="18" rx="2" />
+    <path d="M10.5 7v10M13.5 7v10" />
+  </Svg>
+)
+export const Tube = (p) => (
+  <Svg {...p}>
+    <path d="M6 7h12a3 5 0 0 1 0 10H6a3 5 0 0 1 0-10Z" />
+    <path d="M6 7a3 5 0 0 0 0 10" />
+  </Svg>
+)
+export const Vessel = (p) => (
+  <Svg {...p}>
+    <path d="M7 6.5v11c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-11" />
+    <ellipse cx="12" cy="6.5" rx="5" ry="2.5" />
+  </Svg>
+)
+export const Gauge = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 12l4-3.5" />
+    <path d="M12 3.5v1.5M20.5 12H19M12 20.5V19M3.5 12H5" />
+  </Svg>
+)
+export const Grains = (p) => (
+  <Svg {...p}>
+    <circle cx="8" cy="9" r="2.2" />
+    <circle cx="15.5" cy="7.5" r="1.8" />
+    <circle cx="12" cy="14.5" r="2.4" />
+    <circle cx="17.5" cy="15" r="1.6" />
+    <circle cx="6.5" cy="16" r="1.5" />
+  </Svg>
+)

@@ -10,9 +10,6 @@ export const inr = (n) => inrFmt.format(n)
 export const priceLabel = (price) =>
   typeof price === 'number' ? inr(price) : 'Price on request'
 
-/** Indicative no-cost EMI, as commonly offered on domestic purifiers. */
-export const emi = (price, months = 9) => Math.round(price / months)
-
 export const compact = (n) =>
   n >= 1000 ? `${(n / 1000).toFixed(n % 1000 === 0 ? 0 : 1)}k` : String(n)
 

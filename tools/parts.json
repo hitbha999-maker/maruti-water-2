@@ -1,0 +1,468 @@
+{
+ "Sediment Carbon Filter": {
+  "products": [
+   "zuric-platinum",
+   "zuric-gold",
+   "zuric-silver",
+   "nine-platinum",
+   "nine-gold",
+   "nine-silver",
+   "onix-platinum",
+   "onix-gold",
+   "onix-silver",
+   "mars-gold",
+   "mars-silver",
+   "jade"
+  ],
+  "sections": [
+   "domestic"
+  ]
+ },
+ "Alkaline Filter": {
+  "products": [
+   "zuric-platinum",
+   "zuric-gold",
+   "zuric-silver",
+   "nine-platinum",
+   "nine-gold",
+   "nine-silver",
+   "onix-platinum",
+   "onix-gold",
+   "onix-silver",
+   "mars-gold",
+   "mars-silver",
+   "jade",
+   "pressure-tank-15",
+   "pressure-tank-25",
+   "online-15-frame",
+   "online-25-frame",
+   "online-15-cabinet",
+   "online-25-cabinet"
+  ],
+  "sections": [
+   "commercial",
+   "domestic"
+  ]
+ },
+ "UF Filter": {
+  "products": [
+   "zuric-platinum",
+   "nine-platinum",
+   "onix-platinum",
+   "mars-gold"
+  ],
+  "sections": [
+   "domestic"
+  ]
+ },
+ "UV Filter": {
+  "products": [
+   "zuric-platinum",
+   "zuric-gold",
+   "nine-platinum",
+   "nine-gold",
+   "onix-platinum",
+   "onix-gold",
+   "mars-silver"
+  ],
+  "sections": [
+   "domestic"
+  ]
+ },
+ "TDS Controller": {
+  "products": [
+   "zuric-platinum",
+   "zuric-gold",
+   "nine-platinum",
+   "nine-gold",
+   "onix-platinum",
+   "onix-gold",
+   "mars-gold"
+  ],
+  "sections": [
+   "domestic"
+  ]
+ },
+ "Sediment Granular Activated Carbon": {
+  "products": [
+   "pressure-tank-15",
+   "pressure-tank-25",
+   "online-15-frame",
+   "online-25-frame",
+   "online-15-cabinet",
+   "online-25-cabinet",
+   "online-50-mspc",
+   "online-50-ss",
+   "online-70",
+   "online-100"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "Carbon Block Cartridge": {
+  "products": [
+   "pressure-tank-15",
+   "pressure-tank-25",
+   "online-15-frame",
+   "online-25-frame",
+   "online-15-cabinet",
+   "online-25-cabinet",
+   "online-50-mspc",
+   "online-50-ss",
+   "online-70",
+   "online-100"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "Taste Filter": {
+  "products": [
+   "online-50-mspc",
+   "online-50-ss",
+   "online-70",
+   "online-100"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "RAW WATER PUMP - LUBI / FLOTECH": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "4021 PRESSURE TUBE - FRP / SS": {
+  "products": [
+   "plant-100",
+   "plant-150"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "4021 MEMBRANE V-TECH AQUA": {
+  "products": [
+   "plant-100",
+   "plant-150"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "20\" BIG BLUE JUMBO HOUSING 1\"": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "HIGH PRESSURE PUMP - LUBI / CRI": {
+  "products": [
+   "plant-100",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "20\" 4\" CTO FILTER": {
+  "products": [
+   "plant-100",
+   "plant-150"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "20\" 4.5\" PP FILTER": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "PRESSURE GAUGE": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "ROTA METER": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "RO CONTROL PANEL": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "RO CONTROLLER": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "SOLENOID VALVE - BRASS": {
+  "products": [
+   "plant-100",
+   "plant-150",
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "commercial",
+   "industrial"
+  ]
+ },
+ "HIGH PRESSURE PUMP - LUBI / FLOTECH": {
+  "products": [
+   "plant-150"
+  ],
+  "sections": [
+   "commercial"
+  ]
+ },
+ "4040 PRESSURE TUBE - FRP / SS": {
+  "products": [
+   "plant-250"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "4040 MEMBRANE V-TECH AQUA": {
+  "products": [
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "FRP VESSEL 1054": {
+  "products": [
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "CARBON MEDIA": {
+  "products": [
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "SAND & PEBBLE": {
+  "products": [
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "UPVC FITTING": {
+  "products": [
+   "plant-250",
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual",
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "4080 PRESSURE TUBE - FRP / SS": {
+  "products": [
+   "plant-500",
+   "plant-1000-auto",
+   "plant-1000-manual"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "25 NB AUTO MPV": {
+  "products": [
+   "plant-1000-auto"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "25 NB MPV (MENUAL)": {
+  "products": [
+   "plant-1000-manual"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "8080 PRESSURE TUBE - FRP": {
+  "products": [
+   "plant-2000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "8040 MEMBRANE V-TECH AQUA": {
+  "products": [
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "20\" BIG BLUE JUMBO HOUSING 1.5\"": {
+  "products": [
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "HIGH PRESSURE PUMP - LUBI / OTHER": {
+  "products": [
+   "plant-2000",
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "FRP VESSEL 1665": {
+  "products": [
+   "plant-2000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "40 NB MPV (MENUAL)": {
+  "products": [
+   "plant-2000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "8080 PRESSURE TUBE - FRP / SS": {
+  "products": [
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ },
+ "50 NB MPV (MENUAL)": {
+  "products": [
+   "plant-3000"
+  ],
+  "sections": [
+   "industrial"
+  ]
+ }
+}

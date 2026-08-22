@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local env files — this repo is public
+.env
+.env.*
+!.env.example
+
+# Internal working notes: catalogue transcription/QA records. Useful when
+# checking a figure against the printed page, not for publication.
+notes/

@@ -683,3 +683,113 @@
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Video gallery + lightbox
+   ============================================================ */
+
+@keyframes video-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes video-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.965);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@layer components {
+  .video-scrim {
+    animation: video-scrim-in 260ms ease both;
+  }
+  .video-panel {
+    animation: video-panel-in 420ms var(--ease-out-quint) both;
+  }
+
+  /* The play badge lifts and brightens with the card. */
+  .video-play {
+    transition:
+      transform 0.45s var(--ease-out-quint),
+      background-color 0.3s ease;
+  }
+  .video-card:hover .video-play,
+  .video-card:focus-visible .video-play {
+    transform: translate(-50%, -50%) scale(1.09);
+    background: #fff;
+  }
+  .video-card:focus-visible {
+    outline: none;
+  }
+  .video-card:focus-visible > div {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 3px;
+  }
+}
+
+/* ============================================================
+   Accessories
+   Parts have no catalogue photograph, so each card is drawn with
+   its category glyph on a tinted plate instead of a stock image.
+   ============================================================ */
+
+@layer components {
+  .part-plate {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(120% 120% at 50% 0%, #fff 0%, var(--color-mist) 70%);
+    border: 1px solid var(--color-line);
+    overflow: hidden;
+  }
+  .part-plate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 60% at 50% 40%, color-mix(in srgb, var(--color-blue) 9%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-quint);
+  }
+  .part-card:hover .part-plate::after {
+    opacity: 1;
+  }
+  .part-glyph {
+    position: relative;
+    z-index: 1;
+    color: var(--color-muted-2);
+    transition:
+      color 0.4s ease,
+      transform 0.5s var(--ease-out-quint);
+  }
+  .part-card:hover .part-glyph {
+    color: var(--color-blue);
+    transform: translate3d(0, -2px, 0) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-scrim,
+  .video-panel {
+    animation: none !important;
+    opacity: 1;
+    transform: none !important;
+  }
+  .video-card:hover .video-play,
+  .video-card:focus-visible .video-play {
+    transform: translate(-50%, -50%) !important;
+  }
+  .part-card:hover .part-glyph {
+    transform: none !important;
+  }
+}

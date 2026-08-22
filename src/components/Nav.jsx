@@ -11,6 +11,8 @@ const NAV = [
   { label: 'Domestic', to: '/shop?c=domestic', section: 'domestic' },
   { label: 'Commercial', to: '/shop?c=commercial', section: 'commercial' },
   { label: 'Industrial', to: '/shop?c=industrial', section: 'industrial' },
+  { label: 'Accessories', to: '/accessories' },
+  { label: 'Videos', to: '/videos' },
   { label: 'Support', to: '/support' },
   { label: 'About', to: '/about' },
 ]

@@ -7,6 +7,8 @@ import { ArrowRight, Phone, Pin, Shield } from './Icons'
 const COMPANY_LINKS = [
   ['About us', '/about'],
   ['How RO works', '/technology'],
+  ['Accessories & spares', '/accessories'],
+  ['Videos', '/videos'],
   ['Compare models', '/compare'],
   ['Service & support', '/support'],
   ['Request a quotation', '/quote'],

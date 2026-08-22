@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore } from '../lib/store'
 import { company } from '../data/products'
-import ProductImage from '../components/ProductImage'
+import EnquiryThumb from '../components/EnquiryThumb'
 import { inr, priceLabel, whatsappLink } from '../lib/format'
 import { ArrowRight, Check, Droplet, Phone, Pin, Wrench } from '../components/Icons'
 
@@ -194,7 +194,7 @@ export default function Quote() {
                 <ul className="mt-5 space-y-4">
                   {lines.map((l) => (
                     <li key={l.id} className="flex gap-3.5">
-                      <ProductImage product={l.item} className="h-16 w-16 shrink-0 rounded-xl" sizes="64px" />
+                      <EnquiryThumb item={l.item} className="h-16 w-16 shrink-0 rounded-xl" sizes="64px" />
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-display text-[14.5px] font-semibold">
                           {l.item.name}

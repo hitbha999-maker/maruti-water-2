@@ -321,7 +321,7 @@ Issue: ${form.issue}${form.note ? `\nNotes: ${form.note}` : ''}`
           <div className="reveal lg:sticky lg:top-28 lg:self-start">
             <p className="eyebrow text-muted-2">Help centre</p>
             <h2 className="display-2 mt-4">Common questions.</h2>
-            <p className="lede mt-5">Six answers worth reading before you call.</p>
+            <p className="lede mt-5">{faqs.length} answers worth reading before you call.</p>
             <Link to="/quote" className="btn-ghost mt-7">
               Request a quotation <ArrowRight size={17} />
             </Link>
