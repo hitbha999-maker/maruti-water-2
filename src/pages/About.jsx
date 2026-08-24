@@ -33,7 +33,7 @@ export default function About() {
   return (
     <>
       <section className="shell pt-6 pb-2">
-        <div className="canvas ink-field px-5 py-14 md:px-14 md:py-20">
+        <div className="canvas water-field px-5 py-14 md:px-14 md:py-20">
           <p className="eyebrow text-blue-ink">About us</p>
           <h1 className="display-1 mt-6 max-w-[17ch]">Water systems, from one place in Botad.</h1>
           <p className="lede mt-6 max-w-2xl !text-ink/70">
@@ -42,7 +42,7 @@ export default function About() {
             membranes. Thirty models, three ranges, one conversation.
           </p>
 
-          <div className="mt-12 grid max-w-3xl grid-cols-2 gap-8 border-t border-white/10 pt-9 md:grid-cols-4">
+          <div className="mt-12 grid max-w-3xl grid-cols-2 gap-8 border-t border-ink/10 pt-9 md:grid-cols-4">
             <StatBlock value="30" label="Models in the range" sub="Across three ranges" size="md" />
             <StatBlock value="3000" label="LPH largest plant" sub="Industrial range" size="md" />
             <StatBlock value="ISO" label="9001:2015" sub="On the plants we carry" size="md" />
@@ -194,7 +194,7 @@ export default function About() {
               {company.contacts.map((c) => (
                 <div
                   key={c.phone}
-                  className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line bg-graphite p-5"
+                  className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line bg-white p-5"
                 >
                   <div>
                     <p className="font-display text-[16px] font-semibold">{c.name}</p>

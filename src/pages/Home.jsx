@@ -57,15 +57,15 @@ function Hero() {
 
   return (
     <section className="shell pt-4 pb-2 md:pt-6">
-      <div className="canvas ink-field min-h-[600px] border border-line px-5 py-12 md:min-h-[700px] md:px-14 md:py-16">
+      <div className="canvas water-field min-h-[600px] px-5 py-12 md:min-h-[700px] md:px-14 md:py-16">
         <div
-          className="pointer-events-none absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full opacity-70 animate-drift"
-          style={{ background: 'radial-gradient(circle, rgba(132,125,255,.22), transparent 65%)' }}
+          className="pointer-events-none absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full opacity-60 animate-drift"
+          style={{ background: 'radial-gradient(circle, rgba(168,236,244,.9), transparent 65%)' }}
         />
         <div
-          className="pointer-events-none absolute -bottom-32 -left-20 h-[380px] w-[380px] rounded-full opacity-60 animate-drift"
+          className="pointer-events-none absolute -bottom-32 -left-20 h-[380px] w-[380px] rounded-full opacity-50 animate-drift"
           style={{
-            background: 'radial-gradient(circle, rgba(0,179,221,.14), transparent 65%)',
+            background: 'radial-gradient(circle, rgba(14,116,207,.4), transparent 65%)',
             animationDelay: '3s',
           }}
         />
@@ -102,7 +102,7 @@ function Hero() {
               </a>
             </div>
 
-            <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-white/10 pt-7">
+            <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-ink/10 pt-7">
               {[
                 ['30', 'models in the range'],
                 ['3', 'ranges: home, shop, plant'],
@@ -179,15 +179,6 @@ const RANGE_ART = {
   industrial: ['plant-1000-auto', 'plant-3000', 'plant-250'],
 }
 
-/* Feature-tile hue per range — colour is the differentiator between the three,
-   the way the reference distinguishes its category cards. Deep tones so white
-   text clears AA (~6:1). The product photo sits on its own light plate inside. */
-const RANGE_TILE = {
-  domestic: '#4b49aa', // deep iris
-  commercial: '#35528f', // deep periwinkle
-  industrial: '#7a3d75', // deep orchid
-}
-
 function Ranges() {
   return (
     <section id="ranges" className="shell scroll-mt-24 py-14 md:py-20">
@@ -209,14 +200,10 @@ function Ranges() {
           return (
             <article
               key={s.id}
-              className="reveal group relative flex flex-col overflow-hidden rounded-[28px] p-3 transition-transform duration-500 hover:-translate-y-1"
-              style={{
-                backgroundColor: RANGE_TILE[s.id],
-                transitionTimingFunction: 'var(--ease-out-quint)',
-                transitionDelay: `${i * 80}ms`,
-              }}
+              className="card reveal group overflow-hidden"
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <Link to={`/shop?c=${s.id}`} className="block overflow-hidden rounded-2xl">
+              <Link to={`/shop?c=${s.id}`} className="block">
                 <ProductImage
                   product={hero}
                   className="aspect-[4/3]"
@@ -224,37 +211,35 @@ function Ranges() {
                 />
               </Link>
 
-              <div className="flex flex-1 flex-col p-5 md:p-6">
+              <div className="flex flex-1 flex-col p-6 md:p-7">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-white/15 px-3 py-1 font-display text-[11.5px] font-medium text-white">
+                  <span className="chip bg-mist py-1 text-[11.5px] text-muted">
                     {models.length} products
                   </span>
-                  <span className="rounded-full bg-white/15 px-3 py-1 font-display text-[11.5px] font-medium text-white">
-                    {s.pages}
-                  </span>
+                  <span className="chip bg-mist py-1 text-[11.5px] text-muted">{s.pages}</span>
                 </div>
 
-                <h3 className="mt-4 font-display text-[24px] leading-tight font-semibold text-white">
+                <h3 className="mt-4 font-display text-[24px] leading-tight font-semibold">
                   <Link to={`/shop?c=${s.id}`} className="link-underline">
                     {s.label}
                   </Link>
                 </h3>
-                <p className="mt-1.5 font-display text-[14.5px] font-medium text-white/85">
+                <p className="mt-1.5 font-display text-[14.5px] font-medium text-blue-ink">
                   {s.tagline}
                 </p>
-                <p className="mt-3 text-[14px] leading-relaxed text-white/70">{s.blurb}</p>
+                <p className="mt-3 text-[14px] leading-relaxed text-muted">{s.blurb}</p>
 
-                <ul className="mt-5 space-y-2 border-t border-white/20 pt-5">
+                <ul className="mt-5 space-y-2 border-t border-line pt-5">
                   {RANGE_ART[s.id].map((slug) => {
                     const p = getProduct(slug)
                     return (
                       <li key={slug}>
                         <Link
                           to={`/p/${p.slug}`}
-                          className="flex items-center justify-between gap-3 text-[13.5px] text-white/70 transition-colors hover:text-white"
+                          className="flex items-center justify-between gap-3 text-[13.5px] text-muted transition-colors hover:text-ink"
                         >
                           <span className="truncate">{p.name}</span>
-                          <span className="shrink-0 font-display font-semibold text-white">
+                          <span className="shrink-0 font-display font-semibold text-ink">
                             {priceLabel(p.price)}
                           </span>
                         </Link>
@@ -265,12 +250,12 @@ function Ranges() {
 
                 <div className="mt-auto flex items-end justify-between gap-3 pt-6">
                   <div>
-                    <p className="text-[12.5px] text-white/70">Starting from</p>
-                    <p className="font-display text-[20px] font-bold text-white">
+                    <p className="text-[12.5px] text-muted">Starting from</p>
+                    <p className="font-display text-[20px] font-bold">
                       {from ? priceLabel(from) : 'On request'}
                     </p>
                   </div>
-                  <Link to={`/shop?c=${s.id}`} className="btn-ghost-invert btn-sm">
+                  <Link to={`/shop?c=${s.id}`} className="btn-dark btn-sm">
                     View range <ArrowRight size={15} />
                   </Link>
                 </div>
@@ -313,8 +298,8 @@ function Featured() {
             onClick={() => setTab(s.id)}
             className={`btn btn-sm shrink-0 border ${
               tab === s.id
-                ? 'border-transparent bg-white text-black'
-                : 'border-line bg-white/5 text-muted hover:border-white/40 hover:text-ink'
+                ? 'border-transparent bg-ink text-white'
+                : 'border-line bg-white text-muted hover:border-ink hover:text-ink'
             }`}
           >
             {s.label}
@@ -418,7 +403,7 @@ function ClosingCta() {
           through the models that fit. Call either number, or send the details across.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
-          <Link to="/quote" className="btn bg-white text-black hover:bg-[#e9e9ee]">
+          <Link to="/quote" className="btn bg-white text-ink hover:bg-glow">
             Request a quotation <ArrowRight size={17} />
           </Link>
           <Link to="/shop" className="btn-ghost-invert">

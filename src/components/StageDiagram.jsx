@@ -50,11 +50,11 @@ export default function StageDiagram({ invert = false, stages = DEFAULT_STAGES }
                   className={`relative grid h-12 w-12 place-items-center rounded-full border font-display text-[14px] font-bold transition-all duration-400 ${
                     on
                       ? invert
-                        ? 'scale-110 border-transparent bg-white text-black'
+                        ? 'scale-110 border-transparent bg-white text-ink'
                         : 'scale-110 border-transparent bg-blue text-white'
                       : invert
-                        ? 'border-white/20 bg-steel text-white/70 hover:border-white/60'
-                        : 'border-line bg-white/5 text-muted hover:border-white/40 hover:text-ink'
+                        ? 'border-white/20 bg-ink text-white/60 hover:border-white/60'
+                        : 'border-line bg-white text-muted hover:border-ink hover:text-ink'
                   }`}
                   style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
                 >

@@ -50,8 +50,8 @@ export function Accordion({ items, invert = false }) {
                   className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-all duration-400 ${
                     isOpen
                       ? invert
-                        ? 'rotate-180 border-white bg-white text-black'
-                        : 'rotate-180 border-white/40 bg-white text-black'
+                        ? 'rotate-180 border-white bg-white text-ink'
+                        : 'rotate-180 border-ink bg-ink text-white'
                       : invert
                         ? 'border-white/25 text-white/70'
                         : 'border-line text-muted'
@@ -141,9 +141,9 @@ export function StatBlock({ value, label, sub, invert = false, size = 'lg' }) {
 
 export function Pill({ children, tone = 'default' }) {
   const tones = {
-    default: 'border-white/12 bg-white/8 text-ink',
+    default: 'border-line bg-white text-ink',
     blue: 'border-transparent bg-blue-wash text-blue',
-    dark: 'border-transparent bg-steel text-white',
+    dark: 'border-transparent bg-ink text-white',
     ghost: 'border-white/20 bg-white/5 text-white',
   }
   return <span className={`chip ${tones[tone]}`}>{children}</span>

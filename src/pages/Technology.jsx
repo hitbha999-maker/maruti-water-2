@@ -69,7 +69,7 @@ export default function Technology() {
                 on which a system should be chosen.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/shop" className="btn bg-white text-black hover:bg-[#e9e9ee]">
+                <Link to="/shop" className="btn bg-white text-ink hover:bg-glow">
                   See the range <ArrowRight size={17} />
                 </Link>
                 <Link to="/quote" className="btn-ghost-invert">
@@ -81,7 +81,7 @@ export default function Technology() {
             <ProductImage
               product={plant}
               className="mx-auto aspect-square w-full max-w-[440px] rounded-4xl"
-              plate="bg-graphite"
+              plate="bg-white"
               sizes="(max-width: 1024px) 90vw, 440px"
             />
           </div>
@@ -144,8 +144,8 @@ export default function Technology() {
 
       <section className="shell py-14 md:py-20">
         <div className="grid gap-5 lg:grid-cols-2">
-          <article className="canvas reveal bg-mist p-8 md:p-10">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-blue-ink">
+          <article className="canvas reveal water-field p-8 md:p-10">
+            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/70 text-blue-ink">
               <Droplet size={21} />
             </span>
             <h2 className="display-3 mt-6 max-w-sm">What the membrane takes out.</h2>
@@ -155,7 +155,7 @@ export default function Technology() {
             </p>
             <ul className="mt-7 grid gap-3 sm:grid-cols-2">
               {REMOVES.map(([k, v]) => (
-                <li key={k} className="rounded-2xl bg-white/5 p-3.5">
+                <li key={k} className="rounded-2xl bg-white/60 p-3.5">
                   <span className="block font-display text-[14px] font-semibold">{k}</span>
                   <span className="mt-1 block text-[12.5px] leading-relaxed text-muted">{v}</span>
                 </li>
@@ -164,7 +164,7 @@ export default function Technology() {
           </article>
 
           <article className="canvas reveal bg-mist p-8 md:p-10">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-blue-ink">
+            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white text-blue-ink">
               <Wrench size={21} />
             </span>
             <h2 className="display-3 mt-6 max-w-sm">What it costs to keep running.</h2>
@@ -200,7 +200,7 @@ export default function Technology() {
                 Feed-water TDS, litres needed per day, and the pressure available at the inlet. Get
                 those three right and the model almost picks itself.
               </p>
-              <Link to="/quote" className="btn mt-7 bg-white text-black hover:bg-[#e9e9ee]">
+              <Link to="/quote" className="btn mt-7 bg-white text-ink hover:bg-glow">
                 Send us your requirement <ArrowRight size={17} />
               </Link>
               <p className="mt-6 flex items-center gap-2 text-[13px] text-white/40">

@@ -5,9 +5,9 @@ import { ArrowRight } from '../components/Icons'
 export default function NotFound() {
   return (
     <section className="shell py-20 md:py-28">
-      <div className="canvas ink-field grid place-items-center px-6 py-20 text-center">
-        <span className="grid h-24 w-24 place-items-center rounded-3xl bg-white/8">
-          <LogoMark className="h-9 w-[72px]" invert />
+      <div className="canvas water-field grid place-items-center px-6 py-20 text-center">
+        <span className="grid h-24 w-24 place-items-center rounded-3xl bg-white/70">
+          <LogoMark className="h-9 w-[72px]" />
         </span>
         <p className="eyebrow mt-6 text-blue-ink">404</p>
         <h1 className="display-2 mt-4 max-w-[18ch]">This page ran dry.</h1>

@@ -186,8 +186,8 @@ function Chip({ active, onClick, children }) {
       aria-pressed={active}
       className={`chip shrink-0 whitespace-nowrap transition-colors ${
         active
-          ? 'border-transparent bg-white text-black'
-          : 'border-line bg-white/5 text-muted hover:text-ink'
+          ? 'border-transparent bg-ink text-white'
+          : 'border-line bg-white text-muted hover:text-ink'
       }`}
     >
       {children}

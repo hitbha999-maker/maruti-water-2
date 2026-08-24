@@ -105,7 +105,7 @@ export default function Shop() {
                 onClick={() => setCategory(c.id)}
                 aria-current={cat === c.id ? 'true' : undefined}
                 className={`w-full rounded-xl px-3 py-2 text-left font-display text-[14.5px] transition-colors ${
-                  cat === c.id ? 'bg-white font-semibold text-black' : 'text-muted hover:bg-mist hover:text-ink'
+                  cat === c.id ? 'bg-ink font-semibold text-white' : 'text-muted hover:bg-mist hover:text-ink'
                 }`}
               >
                 {c.label}
@@ -124,7 +124,7 @@ export default function Shop() {
               onClick={() => toggleTech(t)}
               aria-pressed={tech.includes(t)}
               className={`chip transition-colors ${
-                tech.includes(t) ? 'border-transparent bg-blue text-white' : 'text-muted hover:border-white/40 hover:text-ink'
+                tech.includes(t) ? 'border-transparent bg-blue text-white' : 'text-muted hover:border-ink hover:text-ink'
               }`}
             >
               {t}
@@ -142,7 +142,7 @@ export default function Shop() {
               onClick={() => setBody(body === b.id ? null : b.id)}
               aria-pressed={body === b.id}
               className={`chip transition-colors ${
-                body === b.id ? 'border-transparent bg-white text-black' : 'text-muted hover:border-white/40 hover:text-ink'
+                body === b.id ? 'border-transparent bg-ink text-white' : 'text-muted hover:border-ink hover:text-ink'
               }`}
             >
               {b.label}
@@ -246,7 +246,7 @@ export default function Shop() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
-                  className="rounded-full border border-line bg-graphite px-3.5 py-2 font-display text-[14px] font-medium text-ink"
+                  className="rounded-full border border-line bg-white px-3.5 py-2 font-display text-[14px] font-medium text-ink"
                 >
                   {SORTS.map((s) => (
                     <option key={s.id} value={s.id}>
@@ -311,7 +311,7 @@ export default function Shop() {
               </div>
             )}
 
-            <div className="canvas mt-14 ink-field p-8 md:p-10">
+            <div className="canvas mt-14 water-field p-8 md:p-10">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="max-w-lg">
                   <Pill tone="blue">Not sure yet?</Pill>
@@ -338,17 +338,17 @@ export default function Shop() {
       >
         <div
           onClick={() => setFiltersOpen(false)}
-          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-400 ${
+          className={`absolute inset-0 bg-ink/40 backdrop-blur-sm transition-opacity duration-400 ${
             filtersOpen ? 'opacity-100' : 'opacity-0'
           }`}
         />
         <div
-          className={`absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-4xl bg-obsidian transition-transform duration-500 ${
+          className={`absolute inset-x-0 bottom-0 max-h-[85dvh] overflow-y-auto rounded-t-4xl bg-white transition-transform duration-500 ${
             filtersOpen ? 'translate-y-0' : 'translate-y-full'
           }`}
           style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
         >
-          <div className="sticky top-0 flex items-center justify-between border-b border-line bg-obsidian px-5 py-4">
+          <div className="sticky top-0 flex items-center justify-between border-b border-line bg-white px-5 py-4">
             <h2 className="font-display text-[18px] font-semibold">Filters</h2>
             <button
               onClick={() => setFiltersOpen(false)}
@@ -359,7 +359,7 @@ export default function Shop() {
             </button>
           </div>
           <div className="p-5">{Filters}</div>
-          <div className="sticky bottom-0 flex gap-3 border-t border-line bg-obsidian p-5">
+          <div className="sticky bottom-0 flex gap-3 border-t border-line bg-white p-5">
             <button onClick={clearAll} className="btn-ghost flex-1">
               Clear
             </button>

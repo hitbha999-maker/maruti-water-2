@@ -71,7 +71,7 @@ export default function Nav() {
   return (
     <>
       {/* announcement rail */}
-      <div className="relative z-50 bg-abyss text-white">
+      <div className="relative z-50 bg-ink text-white">
         <div className="shell flex h-9 items-center justify-center gap-3 overflow-hidden text-[12.5px] font-medium">
           <span className="hidden sm:inline text-white/55">{company.certification} certified</span>
           <span className="hidden sm:inline text-white/25">·</span>
@@ -91,14 +91,14 @@ export default function Nav() {
       <header
         className={`sticky top-0 z-40 transition-all duration-500 ${
           solid
-            ? 'border-b border-line bg-obsidian/80 backdrop-blur-xl'
+            ? 'border-b border-line bg-white/90 backdrop-blur-xl'
             : 'border-b border-transparent bg-transparent'
         }`}
         style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
       >
         <div className="shell flex h-[72px] items-center justify-between gap-4">
           <div className="flex items-center gap-8">
-            <Logo invert />
+            <Logo />
             <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
               {NAV.map((n) => (
                 <div
@@ -180,7 +180,7 @@ export default function Nav() {
           onMouseLeave={hoverOut}
           aria-hidden={openMega ? undefined : 'true'}
           inert={openMega ? undefined : true}
-          className={`absolute inset-x-0 top-full origin-top overflow-hidden border-b border-line bg-obsidian/95 backdrop-blur-xl transition-all duration-400 ${
+          className={`absolute inset-x-0 top-full origin-top overflow-hidden border-b border-line bg-white transition-all duration-400 ${
             openMega
               ? 'pointer-events-auto max-h-[620px] opacity-100'
               : 'pointer-events-none max-h-0 opacity-0'
@@ -239,18 +239,18 @@ export default function Nav() {
       >
         <div
           onClick={() => setMobile(false)}
-          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-400 ${
+          className={`absolute inset-0 bg-ink/40 backdrop-blur-sm transition-opacity duration-400 ${
             mobile ? 'opacity-100' : 'opacity-0'
           }`}
         />
         <div
-          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-line bg-obsidian transition-transform duration-500 ${
+          className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white transition-transform duration-500 ${
             mobile ? 'translate-x-0' : 'translate-x-full'
           }`}
           style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}
         >
           <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-line px-5">
-            <Logo invert />
+            <Logo />
             <button
               onClick={() => setMobile(false)}
               className="grid h-10 w-10 place-items-center rounded-full hover:bg-mist"

@@ -119,7 +119,7 @@ export default function HeroShowcase() {
     >
       {/* ---------- stage ---------- */}
       <div className="relative aspect-square">
-        <div className="hero-stage water-field absolute inset-0 overflow-hidden rounded-4xl shadow-[inset_0_1px_0_rgba(255,255,255,.85),0_30px_70px_-36px_rgba(0,0,0,.7)] ring-1 ring-white/10">
+        <div className="hero-stage absolute inset-0 overflow-hidden rounded-4xl bg-white/55 shadow-[inset_0_1px_0_rgba(255,255,255,.85),0_26px_60px_-38px_rgba(11,11,12,.45)] ring-1 ring-white/60">
           {slides.map(({ product, section }, i) => {
             const state = stateOf(i)
             return (
@@ -214,7 +214,7 @@ export default function HeroShowcase() {
               onClick={() => go(i - index)}
               aria-label={`Show ${product.name}`}
               aria-current={i === index ? 'true' : undefined}
-              className={`hero-bar ${i === index ? 'w-9' : 'w-3 hover:bg-white/25'}`}
+              className={`hero-bar ${i === index ? 'w-9' : 'w-3 hover:bg-ink/25'}`}
             >
               {i === index && (
                 <span
@@ -241,7 +241,7 @@ function ShowcaseArrow({ side, onClick, label }) {
     <button
       onClick={onClick}
       aria-label={label}
-      className={`absolute top-1/2 z-30 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-black/10 bg-white/70 text-black/55 opacity-0 backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black focus-visible:opacity-100 group-hover/hero:opacity-100 md:grid ${
+      className={`absolute top-1/2 z-30 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/60 text-ink/60 opacity-0 backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-ink focus-visible:opacity-100 group-hover/hero:opacity-100 md:grid ${
         side === 'left' ? 'left-3' : 'right-3'
       }`}
       style={{ transitionTimingFunction: 'var(--ease-out-quint)' }}

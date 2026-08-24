@@ -111,7 +111,7 @@ export default function Compare() {
                       <div className="relative">
                         <button
                           onClick={() => toggleCompare(p.id)}
-                          className="absolute -top-1 right-0 grid h-8 w-8 place-items-center rounded-full border border-line bg-white/5 text-muted transition-colors hover:border-white/40 hover:text-ink"
+                          className="absolute -top-1 right-0 grid h-8 w-8 place-items-center rounded-full border border-line bg-white text-muted transition-colors hover:border-ink hover:text-ink"
                           aria-label={`Remove ${p.name}`}
                         >
                           <Close size={15} />
@@ -133,7 +133,7 @@ export default function Compare() {
                     <th className="border-b border-line bg-mist px-6 py-5 align-bottom">
                       <Link
                         to="/shop"
-                        className="flex h-28 w-28 flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-line text-muted transition-colors hover:border-white/40 hover:text-ink"
+                        className="flex h-28 w-28 flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-line text-muted transition-colors hover:border-ink hover:text-ink"
                       >
                         <Plus size={20} />
                         <span className="text-[12.5px]">Add another</span>
